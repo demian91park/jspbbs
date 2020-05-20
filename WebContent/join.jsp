@@ -33,8 +33,8 @@
 						aria-haspopup="true"
 						aira-expanded="false">connect<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li class="active"><a href="login.jsp">Login</a></li>
-					<li><a href="join.jsp">Create Account</a></li>
+					<li><a href="login.jsp">Login</a></li>
+					<li  class="active"><a href="join.jsp">Create Account</a></li>
 			</ul>
 		</div>
 	</nav>
