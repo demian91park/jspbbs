@@ -7,7 +7,7 @@
 <title>다시 jsp</title>
 </head>
 <body>
-<h1> 다시 jsp</h1>
+<h1> jsp</h1>
 	<script>
 		location.href = 'login.jsp';
 	</script>

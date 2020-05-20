@@ -23,8 +23,8 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
-				<li><a href="main.jsp">메인</a></li>
-				<li><a href="bbs.jsp">게시판</a></li>
+				<li><a href="main.jsp">main</a></li>
+				<li><a href="bbs.jsp">board</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="dropdown">
@@ -42,14 +42,30 @@
 		<div class="col-lg-4"></div>
 		<div class="col-log-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-			<form method="post" action="loginAction.jsp">
-				<h3 style="text-align: center;">Login page</h3>
+			<form method="post" action="joinAction.jsp">
+				<h3 style="text-align: center;">회원가입 페이지</h3>
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="ID" name="userID" maxlength="20">
 						</div>
 					<div class="form-group">
 						<input type="password" class="form-control" placeholder="password" name="userPassword" maxlength="20">
-					</div>	
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="이름" name="userName" maxlength="20">
+					</div>
+					<div class="form-group" style="text-align: center;">
+						<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-primary active"> <!-- active는 이미 선택이되어있다는 뜻 -->
+							<input type="radio" name="userGender" autocomplete="off" value="남자" checked>남자
+						</label>
+						<label class="btn btn-primary"> <!-- active는 이미 선택이되어있다는 뜻 -->
+							<input type="radio" name="userGender" autocomplete="off" value="여자"checked>여자
+						</label>
+						</div>
+					</div>
+				<div class="form-group">
+						<input type="email" class="form-control" placeholder="이메일" name="userEmail" maxlength="40">
+					</div>
 					<input type="submit" class="btn btn-primary form-control" value="로그인">
 			</form>
 			</div>
