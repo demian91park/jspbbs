@@ -6,6 +6,7 @@
 <ul>
 <li>로그인페이지 작성</li>
  <li>USER DAO클래스 작성</li>
+ <li>로그인액션페이지작성</li>
 <li>로그인 기능추가</li>
 <li>DB connection with jdbc</li>
 </ul>
@@ -13,6 +14,7 @@
 <ul> 
  <li>DAO에 회원가입로직 추가</li>
  <li>회원가입 페이지작성</li>
+ <li>join 및 joinAction 페이지작성</li>
  <li>회원가입기능추가</li>
 </ul>
 
@@ -20,7 +22,7 @@
 
 <h3> 세번째</h3>
 <ul>
- <li>로그인에 세션추가 </li>
+ <li>세션추가 </li>
 </ul>
 
 - [x] 메인
