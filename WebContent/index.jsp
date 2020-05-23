@@ -7,7 +7,7 @@
 <title>다시 jsp</title>
 </head>
 <body>
-<h1> jsp</h1>
+
 	<script>
 		location.href = 'main.jsp';
 	</script>

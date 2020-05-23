@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 public class BbsDAO {
 	//DAO는 데이터 접근 객체 실제로 데이터를 빼올수있게함
@@ -73,6 +74,47 @@ public class BbsDAO {
 		return -1; // db오류
 	}
 	
+	public ArrayList<Bbs> getList(int pageNumber){
+		
+		String SQL = "select * from BBS where bbsID < ? and bbsAvailable = 1 order by bbsID desc limit 10";//DESC 내림차순(가장최근의것부터가져옴)
+		ArrayList<Bbs> list = new ArrayList<Bbs>();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, getNext() - (pageNumber - 1) * 10);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Bbs bbs = new Bbs();
+				bbs.setBbsID(rs.getInt(1));
+				bbs.setBbsTitle(rs.getString(2));
+				bbs.setUserID(rs.getString(3));
+				bbs.setBbsDate(rs.getString(4));
+				bbs.setBbsContent(rs.getString(5));
+				bbs.setBbsAvailable(rs.getInt(6));
+				list.add(bbs);
+				 // 마지막에 쓰인글 +1 이 다음글의 번호가 됨 (나온결과에 +1)
+			}
+		//첫게시물 인 경우
+		} catch (Exception e) {
+			e.printStackTrace();// TODO: handle exception
+		}
+		return list; // db오류
+	}
 	
+	public boolean nextpage(int pageNumber) {
+		String SQL = "select * from BBS where bbsID < ? and bbsAvailable = 1";
+	
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, getNext() - (pageNumber -1)*10);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();// TODO: handle exception
+		}
+		return false; // db오류
+	}
 	
 }
+
